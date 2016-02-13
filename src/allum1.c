@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 16:26:24 2016 Baptiste Veyssiere
-** Last update Fri Feb 12 00:43:56 2016 Baptiste Veyssiere
+** Last update Sat Feb 13 01:49:02 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -65,17 +65,21 @@ int	allum(int length)
 {
   char	**tab;
   int	end;
+  int	*binary_tab;
 
   tab = NULL;
   if ((tab = init_tab(tab, length)) == NULL)
+    return (-1);
+  if ((binary_tab = init_binary(length)) == NULL)
     return (-1);
   draw_tab(tab, length);
   end = 0;
   while (end == 0)
     {
-      if (your_turn(tab, length) == -1)
+      if (your_turn(tab, length, binary_tab) == -1)
 	{
 	  free_tab(tab, length);
+	  free(binary_tab);
 	  return (-1);
 	}
       draw_tab(tab, length);
@@ -83,9 +87,10 @@ int	allum(int length)
 	end = 1;
       else
 	{
-	  if (ai_turn(tab, length) == -1)
+	  if (ai_turn(tab, length, binary_tab) == -1)
 	    {
 	      free_tab(tab, length);
+	      free(binary_tab);
 	      return (-1);
 	    }
 	  draw_tab(tab, length);
@@ -93,6 +98,7 @@ int	allum(int length)
 	    end = 1;
 	}
     }
+  free(binary_tab);
   free_tab(tab, length);
   return (0);
 }

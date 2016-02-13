@@ -5,10 +5,27 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 16:54:15 2016 Baptiste Veyssiere
-** Last update Fri Feb 12 00:53:50 2016 Baptiste Veyssiere
+** Last update Sat Feb 13 01:48:39 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
+
+int	*init_binary(int length)
+{
+  int	*tab;
+  int	i;
+
+  if ((tab = malloc(sizeof(int) * (length + 1))) == NULL)
+    return (NULL);
+  i = -1;
+  while (++i <= length)
+    tab[i] = 0;
+  tab[0] = 1;
+  i = 0;
+  while (++i < length)
+    tab[i] = (tab[i - 1] + 2);
+  return (tab);
+}
 
 void	draw_tab(char** tab, int length)
 {

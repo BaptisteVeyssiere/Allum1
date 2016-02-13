@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 17:12:45 2016 Baptiste Veyssiere
-** Last update Fri Feb 12 00:52:40 2016 Baptiste Veyssiere
+** Last update Sat Feb 13 01:49:59 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -35,7 +35,7 @@ int	get_data()
 	    return (-1);
 	}
     }
-  if (str_nb[0] == 0 || nbr == -1)
+  if (str_nb[0] == 0 || nbr == -1 || check_str(str_nb) == 1)
     {
       free(str_nb);
       return (-2);
@@ -112,7 +112,7 @@ void	remove_allum(char **tab, int length, int line, int matches)
     }
 }
 
-int	your_turn(char **tab, int length)
+int	your_turn(char **tab, int length, int *binary_tab)
 {
   int	line_nbr;
   int	line_pass;
@@ -146,5 +146,6 @@ int	your_turn(char **tab, int length)
   my_put_posnbr(line_nbr);
   write(1, "\n", 1);
   remove_allum(tab, length, line_nbr, matches);
+  binary_tab[line_nbr - 1] -= matches;
   return (0);
 }

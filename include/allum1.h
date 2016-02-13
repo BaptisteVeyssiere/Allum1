@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 16:25:23 2016 Baptiste Veyssiere
-** Last update Fri Feb 12 00:47:46 2016 Baptiste Veyssiere
+** Last update Sat Feb 13 02:31:23 2016 Baptiste Veyssiere
 */
 
 #ifndef ALLUM1_H_
@@ -13,6 +13,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
 
 int	allum(int);
 int	my_getnbr(char*);
@@ -21,7 +22,7 @@ char	**init_tab(char**, int);
 void	my_memset(char*, int);
 void	fill_tab(char**, int);
 void	draw_tab(char**, int);
-int	your_turn(char**, int);
+int	your_turn(char**, int, int*);
 char	*my_realloc(char*, int);
 int	get_data();
 int	my_strlen(char*);
@@ -31,6 +32,13 @@ int	test_matches(char**, int, int, int);
 void	my_put_posnbr(int);
 void	remove_allum(char**, int, int, int);
 int	check_end(char**, int, char);
-int	ai_turn(char**, int);
+int	ai_turn(char**, int, int*);
+int	check_str(char*);
+int	ai_algo(int, int*, int*);
+int	get_goodline(int, int*, int);
+int	get_xor(int*, int);
+int	*init_binary(int);
+int	check_marienbad(int*, int);
+int	marienbad_xor(int, int*, int*);
 
 #endif /* !ALLUM1_H_ */
