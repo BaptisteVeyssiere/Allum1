@@ -5,7 +5,7 @@
 ## Login   <veyssi_b@epitech.net>
 ## 
 ## Started on  Wed Feb 10 16:20:33 2016 Baptiste Veyssiere
-## Last update Sat Feb 13 02:27:33 2016 Baptiste Veyssiere
+## Last update Mon Feb 15 16:25:15 2016 Baptiste Veyssiere
 ##
 
 NAME	= allum1
@@ -29,7 +29,7 @@ CC	= gcc
 
 RM	= rm -f
 
-DEBUG	= yes
+DEBUG	= no
 
 ifeq ($(DEBUG), yes)
 	CFLAGS	= -W -Werror -Wall -Wextra -ansi -pedantic -I./include -g
