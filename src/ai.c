@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Fri Feb 12 00:38:57 2016 Baptiste Veyssiere
-** Last update Wed Feb 17 17:15:27 2016 Baptiste Veyssiere
+** Last update Wed Feb 17 17:33:10 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -24,14 +24,14 @@ int	get_xor(int *binary_tab, int length)
 
 int	get_goodline(int length, int *binary_tab, int xor_tot)
 {
-  int	position;
+  int	pos;
   int	line;
 
   line = 0;
-  position = 0;
-  while ((xor_tot >> (position + 1)) > 0)
-    ++position;
-  while (((((1 << position) & binary_tab[line])) >> position) == 0 && line < length)
+  pos = 0;
+  while ((xor_tot >> (pos + 1)) > 0)
+    ++pos;
+  while (((((1 << pos) & binary_tab[line])) >> pos) == 0 && line < length)
     ++line;
   if (line == length)
     return (-1);

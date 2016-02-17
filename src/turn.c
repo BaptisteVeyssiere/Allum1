@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 17:12:45 2016 Baptiste Veyssiere
-** Last update Wed Feb 17 17:21:14 2016 Baptiste Veyssiere
+** Last update Wed Feb 17 17:31:28 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -35,14 +35,7 @@ int	get_data()
 	    return (-1);
 	}
     }
-  if (str_nb[0] == 0 || nbr == -1 || check_str(str_nb) == 1)
-    {
-      free(str_nb);
-      return (-2);
-    }
-  nbr = my_getnbr(str_nb);
-  free(str_nb);
-  return (nbr);
+  return (free_strdata(str_nb, nbr));
 }
 
 int	test_line(char **tab, int length, int line_nbr)
@@ -119,9 +112,7 @@ int	your_turn(char **tab, int length, int *binary_tab)
   int	matches_pass;
   int	matches;
 
-  line_pass = 0;
-  matches_pass = 0;
-  write(1, "\nYour turn:\n", 12);
+  init_turn(&line_pass, &matches_pass);
   while (line_pass == 0 && matches_pass == 0)
     {
       if (line_passfunc(&line_nbr, tab, length, &line_pass) == -1)

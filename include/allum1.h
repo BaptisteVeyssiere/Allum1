@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 16:25:23 2016 Baptiste Veyssiere
-** Last update Wed Feb 17 15:48:53 2016 Baptiste Veyssiere
+** Last update Wed Feb 17 17:30:45 2016 Baptiste Veyssiere
 */
 
 #ifndef ALLUM1_H_
@@ -43,5 +43,7 @@ int	marienbad_xor(int, int*, int*);
 int	freefunc(char**, int*, int, int);
 void	aff_player(char**, int, int, int);
 int	line_passfunc(int*, char**, int, int*);
+void	init_turn(int*, int*);
+int	free_strdata(char*, int);
 
 #endif /* !ALLUM1_H_ */
