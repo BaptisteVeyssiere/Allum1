@@ -1,11 +1,11 @@
 ##
 ## Makefile for allum1 in /home/ghost/rendu/C_Prog_Elem/CPE_2015_Allum1
-## 
+##
 ## Made by Baptiste Veyssiere
 ## Login   <veyssi_b@epitech.net>
-## 
+##
 ## Started on  Wed Feb 10 16:20:33 2016 Baptiste Veyssiere
-## Last update Wed Feb 17 17:21:23 2016 Baptiste Veyssiere
+## Last update Wed Feb 17 18:50:15 2016 Baptiste Veyssiere
 ##
 
 NAME	= allum1
