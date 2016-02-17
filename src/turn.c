@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 17:12:45 2016 Baptiste Veyssiere
-** Last update Sat Feb 13 01:49:59 2016 Baptiste Veyssiere
+** Last update Wed Feb 17 17:21:14 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -28,7 +28,7 @@ int	get_data()
       read(0, buffer, 1);
       if ((buffer[0] < '0' || buffer[0] > '9') && buffer[0] != '\n')
 	nbr = -1;
-      if (buffer[0] != '\n')
+      if (buffer[0] != '\n' && buffer[0] > 0)
 	{
 	  str_nb[++i] = buffer[0];
 	  if ((str_nb = my_realloc(str_nb, (my_strlen(str_nb) + 1))) == NULL)
@@ -124,11 +124,8 @@ int	your_turn(char **tab, int length, int *binary_tab)
   write(1, "\nYour turn:\n", 12);
   while (line_pass == 0 && matches_pass == 0)
     {
-      write(1, "Line: ", 6);
-      if ((line_nbr = get_data()) == -1)
+      if (line_passfunc(&line_nbr, tab, length, &line_pass) == -1)
 	return (-1);
-      if (test_line(tab, length, line_nbr) == 0)
-	line_pass = 1;
       if (line_pass == 1)
 	{
 	  write(1, "Matches: ", 9);
@@ -140,12 +137,7 @@ int	your_turn(char **tab, int length, int *binary_tab)
 	    line_pass = 0;
 	}
     }
-  write(1, "Player removed ", 15);
-  my_put_posnbr(matches);
-  write(1, " match(es) from line ", 21);
-  my_put_posnbr(line_nbr);
-  write(1, "\n", 1);
-  remove_allum(tab, length, line_nbr, matches);
+  aff_player(tab, length, line_nbr, matches);
   binary_tab[line_nbr - 1] -= matches;
   return (0);
 }

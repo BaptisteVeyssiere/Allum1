@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Fri Feb 12 00:38:57 2016 Baptiste Veyssiere
-** Last update Sat Feb 13 16:53:07 2016 Baptiste Veyssiere
+** Last update Wed Feb 17 17:15:27 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -46,15 +46,16 @@ int	get_new_matches(int xor_tot, int nbr)
   i = 0;
   while ((xor_tot >> (i + 1)) > 0)
     ++i;
-  new_matches = 0;
+  new_matches = nbr;
+  new_matches -= (1 << i);
   while (--i >= 0)
     if ((((1 << i) & xor_tot) >> i) == 1)
       {
 	if ((((1 << i) & nbr) >> i) == 0)
 	  new_matches += (1 << i);
+	else
+	  new_matches -= (1 << i);
       }
-    else if ((((1 << i) & nbr) >> i) == 1)
-      new_matches += (1 << i);
   return (new_matches);
 }
 

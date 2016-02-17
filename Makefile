@@ -5,7 +5,7 @@
 ## Login   <veyssi_b@epitech.net>
 ## 
 ## Started on  Wed Feb 10 16:20:33 2016 Baptiste Veyssiere
-## Last update Mon Feb 15 16:25:15 2016 Baptiste Veyssiere
+## Last update Wed Feb 17 17:21:23 2016 Baptiste Veyssiere
 ##
 
 NAME	= allum1
@@ -21,7 +21,9 @@ SRCS	= src/allum1.c		\
 	src/my_put_posnbr.c	\
 	src/ai.c		\
 	src/check_end.c		\
-	src/marienbad.c
+	src/marienbad.c		\
+	src/freefunc.c		\
+	src/turn_bis.c
 
 OBJS	= $(SRCS:.c=.o)
 
