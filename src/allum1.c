@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 16:26:24 2016 Baptiste Veyssiere
-** Last update Wed Feb 17 16:07:13 2016 Baptiste Veyssiere
+** Last update Thu Feb 18 15:03:09 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -92,7 +92,7 @@ int	allum(int length)
 
 int	main(int ac, char **av)
 {
-  if (ac == 1 || check_nbr(av[1]) == 1)
+  if (ac == 1 || check_nbr(av[1]) == 1 || my_getnbr(av[1]) > 2000)
     {
       if (allum(4) == -1)
 	return (-1);
