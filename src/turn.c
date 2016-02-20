@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 17:12:45 2016 Baptiste Veyssiere
-** Last update Wed Feb 17 17:31:28 2016 Baptiste Veyssiere
+** Last update Sat Feb 20 16:17:55 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -25,7 +25,8 @@ int	get_data()
   my_memset(buffer, 2);
   while (buffer[0] != '\n')
     {
-      read(0, buffer, 1);
+      if (read(0, buffer, 1) == 0)
+	exit(-1);
       if ((buffer[0] < '0' || buffer[0] > '9') && buffer[0] != '\n')
 	nbr = -1;
       if (buffer[0] != '\n' && buffer[0] > 0)
