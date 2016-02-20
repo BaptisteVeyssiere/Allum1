@@ -5,7 +5,7 @@
 ** Login   <veyssi_b@epitech.net>
 **
 ** Started on  Wed Feb 10 17:12:45 2016 Baptiste Veyssiere
-** Last update Sat Feb 20 16:32:44 2016 Baptiste Veyssiere
+** Last update Sat Feb 20 23:18:08 2016 Baptiste Veyssiere
 */
 
 #include "allum1.h"
@@ -26,7 +26,7 @@ int	get_data()
   while (buffer[0] != '\n')
     {
       if (read(0, buffer, 1) == 0)
-	exit(-1);
+	return (-1);
       if ((buffer[0] < '0' || buffer[0] > '9') && buffer[0] != '\n')
 	nbr = -1;
       if (buffer[0] != '\n' && buffer[0] > 0)
